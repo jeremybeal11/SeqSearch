@@ -26,8 +26,6 @@ class SequentialStringList:
                 
         return found
 
-
-
 newstring = "hey how are you ?"
 findstr = "you"
 
