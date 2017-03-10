@@ -1,0 +1,30 @@
+
+
+
+def mad(adding):
+    if len(adding) == 1:    ### this counts the items in the list and if it
+                            ### == 1 then to return that numeber
+        return adding[0]    ### this will return the first number given
+
+    else:
+        return adding [0] + mad(adding [1: ]) ### we will actually add the first
+         ###this line above is the actual RECUSION!!!! DDUUHHHH
+        ### indexed item and add it with the rest 
+
+print(mad([3]))
+
+
+     
+### side challenge made a recursion that finds largest number
+
+def large(big):
+    if len (big) == 1:
+        return big[0]
+        #elif:
+            #big[0] > large([])
+
+    else:
+        #big[0] > big[1]
+        return big[0] > large(big[1:])
+
+print(" is 6 larger then 5?", large([6,5]))
