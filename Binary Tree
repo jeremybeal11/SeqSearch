@@ -1,0 +1,56 @@
+import timeit
+class Binarynode:
+
+    def __init__(self, value = None):
+
+        self.value = value
+        self.left = None
+        self.right = None
+
+    def add(self, val):
+        if val <= self.value:
+            if self.left:
+                self.left.add(val)
+            else:
+                self.left = Binarynode(val)
+        else:
+             if self.right:
+                self.right.add(val)
+             else:
+                self.right = Binarynode(val)
+
+
+class binaryT:
+
+    def __init__(self):
+        self.root = None
+
+    def add(self, value):
+        if self.root == None:
+            self.root = Binarynode(value)
+        else:
+            self.root.add(value)
+
+    def find(self, target):
+        node = self.root
+        while node:
+            if target == node.value:
+                return True
+            else:
+                if target < node.value:
+                    node = node.left
+
+                else:
+                    node = node.right
+        return False
+            
+
+
+bt = binaryT()
+bt.add(5)
+bt.add(3)
+bt.add(1)
+print("find 5", bt.find(5))
+print("find 3", bt.find(3))
+
+
